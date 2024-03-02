@@ -1,8 +1,11 @@
-import React, { useContext } from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import { Context } from '../../main';
-import axios from 'axios';
-import toast from 'react-hot-toast';
+import React from "react";
+import { useContext } from "react";
+import { Context } from "../../main";
+import { Navigate } from "react-router-dom";
+import HeroSection from "./HeroSection";
+import HowItWorks from "./HowItWorks";
+import PopularCategories from "./PopularCategories";
+import PopularCompanies from "./PopularCompanies";
 
 const JobSeekerHome = () => {
   const { isAuthorized, setIsAuthorized } = useContext(Context);
@@ -13,9 +16,14 @@ const JobSeekerHome = () => {
   }
 
   return (
-    <div>
-      <h1>Job Seeker Home</h1>
-    </div>
+    <>
+      <section className="homePage page">
+        <HeroSection />
+        <HowItWorks />
+        <PopularCategories />
+        <PopularCompanies />
+      </section>
+    </>
   );
 };
 
